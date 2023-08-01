@@ -30,7 +30,7 @@ if (strlen($fname) < 2) {
     $spassword = password_hash($password, PASSWORD_BCRYPT, array('cost' => 12));
 
     $query = "SELECT * FROM members WHERE email='$email'";
-    $result = mysqli_query($mysqli, $query) or die(mysqli_error());
+    $result = mysqli_query($mysqli, $query);
     $num_row = mysqli_num_rows($result);
     $row = mysqli_fetch_array($result);
 
